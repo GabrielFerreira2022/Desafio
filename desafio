@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void bolha(char *item, int total_elem) {
+	int a,b;
+	char t;
+	
+	for(a=1; a<total_elem; ++a)
+	for(b=total_elem-1;b>=a;--b)
+	 {
+		if(item[b-1]>item[b]){
+			
+	t=item[b-1];
+	item[b-1]=item[b];
+	item[b]=t;
+		}
+	}
+}
+  int main (){
+  	char letras [80];
+  	printf("Digite as letras: \n");
+  	gets(letras);
+  	bolha(letras, strlen(letras));
+  	
+  	printf("Letras organizadas: %s", letras);
+  	
+	return 0;
+}
